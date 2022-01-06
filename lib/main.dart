@@ -1,8 +1,8 @@
-import 'package:busca_cep/binding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'home.dart';
+import 'package:busca_cep/binding.dart';
 
 void main(){
   runApp( GetMaterialApp(

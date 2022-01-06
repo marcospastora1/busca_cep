@@ -17,7 +17,7 @@ class Home extends GetView<HomeController> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             TextField(
-              controller: controller.txtcep,
+              controller: controller.controllerCep,
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(labelText: 'Digite o CEP'),
               style: const TextStyle(fontSize: 20),

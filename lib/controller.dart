@@ -7,23 +7,25 @@ import 'dart:convert';
 class HomeController extends GetxController {
   var resultado = 'Digite o Cep'.obs;
 
-  final txtcep = TextEditingController();
+  final controllerCep = TextEditingController();
 
   consultaCep() async {
     //pegando o cep digitado no campo de texto
-    String cep = txtcep.text;
+    String cep = controllerCep.text;
 
     //configurando url
     String url = 'https://viacep.com.br/ws/$cep/json/';
 
     http.Response response = await http.get(Uri.parse(url));
+    //pedindo os dados da api com o metodo get
 
     Map<String, dynamic> retorno = json.decode(response.body);
+    //transformando o arquivo json em um map
 
-    String logradouro = retorno['logradouro'];
-    String cidade = retorno['localidade'];
-    String bairro = retorno['bairro'];
-    String estado = retorno['uf'];
+    final logradouro = retorno['logradouro'];
+    final cidade = retorno['localidade'];
+    final bairro = retorno['bairro'];
+    final estado = retorno['uf'];
 
     resultado.value = '$logradouro, bairro $bairro, $cidade, $estado';
   }
