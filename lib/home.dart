@@ -24,7 +24,7 @@ class Home extends GetView<HomeController> {
             ),
             Obx(
               () => Text(
-                'Resultado:\n${controller.resultado.value}',
+                '${controller.resultado.value}',
                 style: const TextStyle(fontSize: 25),
               ),
             ),

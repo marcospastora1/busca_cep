@@ -27,6 +27,6 @@ class HomeController extends GetxController {
     final bairro = retorno['bairro'];
     final estado = retorno['uf'];
 
-    resultado.value = '$logradouro, bairro $bairro, $cidade, $estado';
+    resultado.value = 'Resultado:\n$logradouro, bairro $bairro, $cidade, $estado';
   }
 }

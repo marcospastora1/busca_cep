@@ -6,6 +6,7 @@ import 'package:busca_cep/binding.dart';
 
 void main(){
   runApp( GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute: '/home',
     initialBinding: HomeBinding(),
     getPages: [
