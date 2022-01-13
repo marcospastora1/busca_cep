@@ -5,16 +5,16 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class HomeController extends GetxController {
-  var resultado = 'Digite o Cep'.obs;
+  final resultado = 'Digite o Cep'.obs;
 
   final controllerCep = TextEditingController();
 
-  consultaCep() async {
+  Future<void> consultaCep() async {
     //pegando o cep digitado no campo de texto
-    String cep = controllerCep.text;
+    final cep = controllerCep.text;
 
     //configurando url
-    String url = 'https://viacep.com.br/ws/$cep/json/';
+    var url = 'https://viacep.com.br/ws/$cep/json/';
 
     http.Response response = await http.get(Uri.parse(url));
     //pedindo os dados da api com o metodo get
@@ -27,6 +27,7 @@ class HomeController extends GetxController {
     final bairro = retorno['bairro'];
     final estado = retorno['uf'];
 
-    resultado.value = 'Resultado:\n$logradouro, bairro $bairro, $cidade, $estado';
+    resultado.value =
+        'Resultado:\n$logradouro, bairro $bairro, $cidade, $estado';
   }
 }
